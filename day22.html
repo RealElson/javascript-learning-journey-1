@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day 22 - DOM Manipulation</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 20px;
+                background-color: #f0f0f0;
+            }
+            .container {
+                background: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            h1 {
+                color: #333;
+            }
+            button {
+                background: #007BFF;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin: 5px;
+            }
+            button:hover {
+                background: #0056b3;
+            }
+            input{
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                width: 200px;
+                margin: 5px;
+            }
+            #output {
+                
+                margin-top: 20px;
+                padding: 15px;
+                background: #f8f9fa;
+                border-radius: 5px;
+                min-height: 50px;
+            }
+
+            
+
+        
+            
+
+                
+                
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Day 22: DOM Manipulation</h1>
+            <p id="greeting">Hello, Emmanuel!</p>
+
+            <h2>Budget calculator</h2>
+            <input type="number" id="income" placeholder="monthly income" />
+            <input type="number" id="expenses" placeholder="monthly expenses" />
+            <button onclick="calculateSavings()">Calculate Savings</button>
+
+            <h2>Todo List</h2>
+             <input type="text" id="taskInput" placeholder="Enter a task">
+            <button onclick="addTask()">Add Task</button>
+             <button onclick="clearTasks()">Clear All</button> 
+
+            
+            
+
+            <div id="output"></div>
+            </div>
+
+            <script src="day22.js"></script>
+    </body>
+</html>
