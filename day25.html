@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Day 25 - Event Listeners</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        width: 300px;
+        margin: 5px;
+      }
+      #taskList {
+        margin-top: 20px;
+      }
+      .task-item {
+        padding: 10px;
+        margin: 5px 0;
+        background: #f8f9fa;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .edit-btn {
+        background: #ffc107;
+        color: black;
+      }
+      .delete-btn {
+        background: #dc3545;
+      }
+      .save-btn {
+        background: #28a745;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+
+        .container {
+          padding: 15px;
+          margin: auto;
+          width: 100%;
+        }
+
+        input {
+          width: 90%;
+          margin-bottom: 10px;
+        }
+
+        button {
+          width: 48%;
+          margin: 1%;
+        }
+
+        .task-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Day 25: Event Listeners</h1>
+
+      <h2>Todo List</h2>
+      <input type="text" id="taskInput" placeholder="Enter a task" />
+      <button id="addBtn">Add Task</button>
+      <button id="clearBtn">Clear All</button>
+
+      <div id="taskList"></div>
+    </div>
+
+    <script src="day25.js"></script>
+  </body>
+</html>
