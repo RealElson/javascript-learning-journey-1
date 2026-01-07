@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day 28 - Pomodoro Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .timer-mode {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .timer-display {
+            font-size: 80px;
+            font-weight: bold;
+            color: #667eea;
+            margin: 30px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .mode-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .mode-btn {
+            background: #f0f0f0;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+        .mode-btn.active {
+            background: #667eea;
+            color: white;
+        }
+        .stats {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px solid #f0f0f0;
+        }
+        .stat-item {
+            display: inline-block;
+            margin: 0 20px;
+            font-size: 16px;
+            color: #666;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pomodoro Timer</h1>
+        <div class="timer-mode" id="timerMode">Work Session</div>
+        
+        <div class="timer-display" id="timerDisplay">25:00</div>
+        
+        <div class="controls">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn" disabled>Pause</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+        
+        <div class="mode-buttons">
+            <button class="mode-btn active" id="workBtn">Work (25min)</button>
+            <button class="mode-btn" id="breakBtn">Break (5min)</button>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-value" id="completedSessions">0</span>
+                <span>Sessions Completed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="totalMinutes">0</span>
+                <span>Total Minutes</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="day28.js"></script>
+</body>
+</html>
