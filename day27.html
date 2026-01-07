@@ -1,0 +1,167 @@
+<html>
+  <head>
+    <title>Day 27 - Habit Tracker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      .date-display {
+        text-align: center;
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+      .input-section {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+      input {
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      .habit-list {
+        display: grid;
+        gap: 15px;
+      }
+      .habit-item {
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-left: 5px solid #ddd;
+      }
+      .habit-item.completed {
+        border-left-color: #28a745;
+        background: #d4edda;
+      }
+      .habit-details {
+        flex: 1;
+      }
+      .habit-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      .habit-stats {
+        font-size: 14px;
+        color: #666;
+      }
+      .habit-actions {
+        display: flex;
+        gap: 10px;
+      }
+      .complete-btn {
+        background: #28a745;
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+      .complete-btn:disabled {
+        background: #6c757d;
+        cursor: not-allowed;
+      }
+      .delete-btn {
+        background: #dc3545;
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+      .streak-badge {
+        background: #ffc107;
+        color: #000;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .stats-overview {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+      .stat-card {
+        background: #e9ecef;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+      }
+      .stat-value {
+        font-size: 32px;
+        font-weight: bold;
+        color: #007bff;
+      }
+      .stat-label {
+        font-size: 14px;
+        color: #666;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Day 27: Habit Tracker</h1>
+      <div class="date-display" id="dateDisplay"></div>
+
+      <div class="input-section">
+        <input
+          type="text"
+          id="habitInput"
+          placeholder="Enter a habit (e.g., code for 2 hours)"
+        />
+        <button id="addBtn">Add Habit</button>
+      </div>
+      <div class="stats-overview">
+        <div class="stat-card">
+          <div class="stat-value" id="totalHabits">0</div>
+          <div class="stat-label">Total Habits</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="completedToday">0</div>
+          <div class="stat-label">Completed Today</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="completionRate">0%</div>
+          <div class="stat-label">Completion Rate</div>
+        </div>
+      </div>
+      <!-- closes stats-overview -->
+
+      <h3>Your Habits:</h3>
+      <div class="habit-list" id="habitList"></div>
+    </div>
+    <!-- closes container -->
+
+    <script src="day27.js"></script>
+  </body>
+</html>
